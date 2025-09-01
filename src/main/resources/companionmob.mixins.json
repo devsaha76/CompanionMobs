@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.flame.companionmob.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "IgnoreMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

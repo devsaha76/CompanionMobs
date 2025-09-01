@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "G": {
+      "item": "minecraft:golden_apple"
+    }
+  },
+  "pattern": [
+    "   ",
+    "#G#",
+    "   "
+  ],
+  "result": {
+    "count": 3,
+    "id": "companionmob:precious_cookies"
+  }
+}
