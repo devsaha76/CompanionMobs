@@ -3,7 +3,11 @@
   "package": "net.flame.companionmob.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "IgnoreMixin"
+    "IgnoreMixin",
+    "LivingEntityTameMixin",
+    "CreeperMixin",
+    "ZombieMixin",
+    "DragonFireballMixin"
   ],
   "client": [
   ],

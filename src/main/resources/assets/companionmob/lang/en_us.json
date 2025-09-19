@@ -1,4 +1,9 @@
 {
   "effect.companionmob.ignore_effect": "Ignore Effect",
-  "item.companionmob.precious_cookies": "Precious Cookies"
+  "item.companionmob.precious_cookies": "Precious Cookies",
+  "item.companionmob.necromancer_staff": "Necromancer's Staff",
+  "tooltip.companionmob.necromancer_staff.shift_down1": "This is §5Necromancer's§r §5Staff§r used to control your Tamed Companion",
+  "tooltip.companionmob.necromancer_staff.shift_down2": "§9Passive Attack: Right-click for Dragon Bless attack",
+  "tooltip.companionmob.necromancer_staff.shift_down3": "§5Special Attack: Shift-click to charge, then press Right-click to command attack",
+  "tooltip.companionmob.necromancer_staff": "Press §eShift§r for more Information"
 }
