@@ -188,6 +188,7 @@
 			}
 		}
 	],
+	"gui_light": "front",
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [0, -43, 0],
@@ -198,8 +199,8 @@
 			"translation": [0, 2, 1.75]
 		},
 		"firstperson_righthand": {
-          "rotation": [-55, -81, -1],
-          "translation": [0.75, -1.25, 1.5]
+			"rotation": [-55, -81, -1],
+			"translation": [0.75, -1.25, 1.5]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, 81, 0],
@@ -209,8 +210,8 @@
 			"translation": [0, 9.2, 0]
 		},
 		"gui": {
-			"rotation": [0, 0, 16],
-			"translation": [0, -2.5, 0],
+			"rotation": [0, 180, 40],
+			"translation": [-1, -2.5, 0],
 			"scale": [0.45, 0.45, 1]
 		},
 		"head": {

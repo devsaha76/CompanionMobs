@@ -12,6 +12,9 @@ public class ModEffects {
     public static final RegistryEntry<StatusEffect> MOB_IGNORE = registerStatusEffect("ignore_effect",
             new IgnoreEffect(StatusEffectCategory.BENEFICIAL, 0xFFD700));
 
+    public static final RegistryEntry<StatusEffect> MARKED = registerStatusEffect("marked",
+            new MarkedEffect());
+
     private static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Companionmob.MOD_ID, name), statusEffect);
     }

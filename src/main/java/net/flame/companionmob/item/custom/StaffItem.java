@@ -1,5 +1,6 @@
 package net.flame.companionmob.item.custom;
 
+import net.flame.companionmob.effect.ModEffects;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -79,7 +80,8 @@ public class StaffItem extends Item {
                     );
 
                     if (ehr != null && ehr.getEntity() instanceof LivingEntity living) {
-                        living.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 100, 0));
+                        living.addStatusEffect(new StatusEffectInstance(ModEffects.MARKED, 200, 0, false, true, false));
+                        living.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 200, 0, false, false , false));
                     }
                 }
                 user.getItemCooldownManager().set(this, SPECIAL_COOLDOWN);
@@ -139,7 +141,7 @@ public class StaffItem extends Item {
 
         for (int i = 0; i <= steps; i++) {
             Vec3d pos = start.add(dir.multiply(distance * ((double)i / (double)steps)));
-            world.spawnParticles(ParticleTypes.END_ROD,
+            world.spawnParticles(ParticleTypes.PORTAL,
                     pos.x, pos.y, pos.z,
                     2, 0.0, 0.0, 0.0, 0.0);
         }

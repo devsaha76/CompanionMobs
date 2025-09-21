@@ -1,13 +1,19 @@
 package net.flame.companionmob.mixin;
 
+import net.flame.companionmob.ai.CompanionAttackMarkedGoal;
 import net.flame.companionmob.ai.CompanionFollowOwnerGoal;
 import net.flame.companionmob.entity.Tameable;
+import net.flame.companionmob.item.ModItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -69,6 +75,11 @@ public abstract class CreeperMixin extends HostileEntity implements Tameable {
         ));
     }
 
+    @Inject(method = "initGoals", at = @At("TAIL"))
+    private void companionmob$addMarkedAttackGoal(CallbackInfo ci) {
+        this.targetSelector.add(2, new CompanionAttackMarkedGoal((PathAwareEntity) (Object)this));
+    }
+
     @Inject(method = "setTarget", at = @At("HEAD"), cancellable = true)
     private void companionmob$preventOwnerTarget(LivingEntity target, CallbackInfo ci) {
         if (isTamed() && target != null && target.getUuid().equals(getOwnerUuid())) {
@@ -83,6 +94,15 @@ public abstract class CreeperMixin extends HostileEntity implements Tameable {
             ci.cancel();
         }
     }
+
+    @Inject(method = "explode", at = @At("TAIL"))
+    private void companionmob$dropTotemExplode(CallbackInfo ci) {
+        if (!this.getWorld().isClient && this.isTamed()) {
+            this.dropStack(new ItemStack(ModItems.CREEPER_TOTEM));
+        }
+    }
+
+
 
     @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void companionmob$writeNbt(NbtCompound nbt, CallbackInfo ci) {

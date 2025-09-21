@@ -6,8 +6,10 @@
     "IgnoreMixin",
     "LivingEntityTameMixin",
     "CreeperMixin",
-    "ZombieMixin",
-    "DragonFireballMixin"
+    "DragonFireballMixin",
+    "AreaEffectCloudMixin",
+    "LivingEntityMixin",
+    "LivingEntityClientMixin"
   ],
   "client": [
   ],

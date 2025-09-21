@@ -2,10 +2,10 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
-    "textures": {
-      "0": "companionmob:item/precious_cookies",
-      "particle": "companionmob:item/precious_cookies"
-    },
+	"textures": {
+		"0": "companionmob:item/precious_cookies",
+		"particle": "companionmob:item/precious_cookies"
+	},
 	"elements": [
 		{
 			"from": [6, 1, 6],
@@ -151,6 +151,7 @@
 			}
 		}
 	],
+	"gui_light": "front",
 	"display": {
 		"thirdperson_righthand": {
 			"translation": [0, 0.5, 1],
@@ -175,7 +176,7 @@
 			"scale": [0.49, 0.49, 0.3]
 		},
 		"gui": {
-			"translation": [0, -0.75, 0],
+			"translation": [0, -1, 0],
 			"scale": [0.87, 0.87, 0.5]
 		},
 		"fixed": {

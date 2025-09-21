@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "pattern": [
+    " # ",
+    "iJi",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dragon_breath"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "J": {
+      "item": "companionmob:precious_cookies"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "companionmob:necromancer_staff"
+  }
+}

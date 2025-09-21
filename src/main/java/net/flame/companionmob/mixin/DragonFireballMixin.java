@@ -18,7 +18,7 @@ public abstract class DragonFireballMixin {
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/world/World;spawnEntity(Lnet/minecraft/entity/Entity;)Z",
-                    shift = At.Shift.BEFORE
+                    shift = At.Shift.AFTER
             )
     )
     private void companionmob$replaceEffect(HitResult hitResult, CallbackInfo ci) {
@@ -32,9 +32,11 @@ public abstract class DragonFireballMixin {
             cloud.setPotionContents(PotionContentsComponent.DEFAULT);
             cloud.setPotionContents(
                     PotionContentsComponent.DEFAULT.with(
-                            new StatusEffectInstance(StatusEffects.WITHER, 200, 1)
+                            new StatusEffectInstance(StatusEffects.WITHER, 200, 1, true, false, false)
                     )
             );
+            cloud.setDuration(300);
+            cloud.setRadiusGrowth(-cloud.getRadius() / (float) cloud.getDuration());
         });
     }
 }
